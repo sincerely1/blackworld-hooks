@@ -1,0 +1,37 @@
+{
+  "name": "blackworld-hooks",
+  "version": "0.1.0",
+  "description": "这个一个blackworld开发的hooks库",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "prepare": "husky",
+    "init": "pnpm install && pnpm run build",
+    "start": "pnpm run dev",
+    "clean-dist": "rimraf 'packages/hooks/{lib,es,node_modules,dist}'",
+    "clean": "pnpm run clean-dist && rimraf node_modules",
+    "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "pub": "pnpm run build && pnpm -r --filter=./packages/* publish",
+    "pub:beta": "pnpm run build && pnpm -r --filter=./packages/* publish --tag beta",
+    "lint": "eslint ./packages --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "keywords": [
+    "hooks",
+    "React"
+  ],
+  "author": "blackworld",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^19.2.2",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@eslint/js": "^9.1.1",
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "globals": "^15.0.0",
+    "husky": "^9.0.11",
+    "prettier": "^3.2.5",
+    "typescript-eslint": "^7.7.0"
+  }
+}
