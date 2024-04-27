@@ -9,7 +9,10 @@
     "sourceMap": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "@@/*": [".dumi/tmp/*"],
+      "blackworldHooks": ["./packages/hooks/src/index.ts"],
+      "blackworldHooks/lib/*": ["./packages/hooks/src/*"]
     },
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
