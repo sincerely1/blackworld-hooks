@@ -2,7 +2,7 @@
 title: 首页
 hero:
   image: /short-logo.png
-  desc: 印客学院 React 业务 Hooks
+  desc: BlackWorld React 业务 Hooks
   actions:
     - text: 指南
       link: /guide
@@ -10,7 +10,6 @@ hero:
       link: /hooks
 footer: Copyright (c) © 2023 by encode studio, All Rights Reserved
 ---
-
 ## ✨ 特性
 
 - 可靠的代码健壮：使用 Typescript 构建，提供完善的类型定义文件
@@ -20,13 +19,13 @@ footer: Copyright (c) © 2023 by encode studio, All Rights Reserved
 ## 📦 安装
 
 ```bash
-$ pnpm install --save encode-hooks
+$ pnpm install --save blackworld-hooks
 # or
-$ yarn add encode-hooks
+$ yarn add blackworld-hooks
 ```
 
 ## 🔨 使用
 
 ```ts
-import { useToggle } from 'encode-hooks';
+import { useToggle } from 'blackworld-hooks';
 ```

@@ -5,7 +5,7 @@ import { createUseStorageState } from '../index';
 class TestStorage implements Storage {
   [name: string]: any;
 
-  length: number = 0;
+  length = 0;
 
   _values = new Map<string, string>();
 

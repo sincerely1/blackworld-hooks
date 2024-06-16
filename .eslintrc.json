@@ -10,6 +10,7 @@
   "parserOptions": { "project": ["./tsconfig.json"] },
   "plugins": ["@typescript-eslint"],
   "rules": {
-    "no-undef": "off"
+    "no-undef": "off",
+    "@typescript-eslint/ban-ts-comment": "off"
   }
 }
