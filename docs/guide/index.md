@@ -1,4 +1,4 @@
-# blackworld-hooks
+# encode-hooks
 
 印客学院 React 业务 Hooks
 
@@ -59,7 +59,7 @@ pnpm run changelog
 ## 📧 联系
 
 - **印客学院官网**: <http://encodestudio.cn>
-- **encode Hooks** <https://encode-studio-fe.github.io/blackworld-hooks/>
-- **GitHub**: <https://github.com/encode-studio-fe/blackworld-hooks>
+- **encode Hooks** <https://encode-studio-fe.github.io/encode-hooks/>
+- **GitHub**: <https://github.com/encode-studio-fe/encode-hooks>
 
 </br>
