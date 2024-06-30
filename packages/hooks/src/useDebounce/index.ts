@@ -8,9 +8,11 @@ function useDebounce<T>(value: T, options?: DebounceOptions) {
   const { run } = useDebounceFn(() => {
     setDebounced(value);
   }, options);
+
   useEffect(() => {
     run();
   }, [value]);
+
   return debounced;
 }
 

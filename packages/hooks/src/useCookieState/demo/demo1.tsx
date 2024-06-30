@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { useCookieState } from 'blackworldHooks';
+import { useCookieState } from 'blackworld-hooks';
 
 export default () => {
   const [message, setMessage] = useCookieState('useCookieStateString');

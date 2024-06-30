@@ -1,5 +1,5 @@
 import React from 'react';
-import { useMap } from 'blackworldHooks';
+import { useMap } from 'blackworld-hooks';
 
 export default () => {
   const [map, { set, setAll, remove, reset, get }] = useMap<string | number, string>([

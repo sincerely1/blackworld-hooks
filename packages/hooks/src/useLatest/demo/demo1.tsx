@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { useLatest } from 'blackworldHooks';
+import { useLatest } from 'blackworld-hooks';
 
 export default () => {
   const [count, setCount] = useState(0);

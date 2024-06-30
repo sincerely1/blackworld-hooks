@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { useThrottle } from 'blackworldHooks';
+import { useThrottle } from 'blackworld-hooks';
 
 export default () => {
   const [value, setValue] = useState<string>();

@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { useToggle } from 'blackworldHooks';
+import { useToggle } from 'blackworld-hooks';
 
 export default () => {
   const [state, { toggle, set, setLeft, setRight }] = useToggle('Hello', 'World');

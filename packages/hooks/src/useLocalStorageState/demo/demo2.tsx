@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { useLocalStorageState } from 'blackworldHooks';
+import { useLocalStorageState } from 'blackworld-hooks';
 
 const defaultArray = ['a', 'e', 'i', 'o', 'u'];
 

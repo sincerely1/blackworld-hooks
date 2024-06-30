@@ -1,7 +1,7 @@
 import { renderHook, act } from '@testing-library/react';
 import useToggle from '../index';
 
-const callToggle = (hook) => {
+const callToggle = (hook: any) => {
   act(() => {
     hook.result.current[1].toggle();
   });

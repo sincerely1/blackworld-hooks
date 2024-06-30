@@ -10,8 +10,10 @@ const useMount = (fn: () => void) => {
       );
     }
   }
+
   useEffect(() => {
     fn?.();
   }, []);
 };
+
 export default useMount;

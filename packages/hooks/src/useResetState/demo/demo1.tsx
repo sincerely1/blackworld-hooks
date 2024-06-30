@@ -1,5 +1,5 @@
 import React from 'react';
-import { useResetState } from 'blackworldHooks';
+import { useResetState } from 'blackworld-hooks';
 
 interface State {
   hello: string;

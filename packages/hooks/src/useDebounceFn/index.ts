@@ -14,8 +14,11 @@ function useDebounceFn<T extends noop>(fn: T, options?: DebounceOptions) {
       console.error(`useDebounceFn expected parameter is a function, got ${typeof fn}`);
     }
   }
+
   const fnRef = useLatest(fn);
+
   const wait = options?.wait ?? 1000;
+
   const debounced = useMemo(
     () =>
       debounce(
@@ -27,6 +30,7 @@ function useDebounceFn<T extends noop>(fn: T, options?: DebounceOptions) {
       ),
     [],
   );
+
   useUnmount(() => {
     debounced.cancel();
   });

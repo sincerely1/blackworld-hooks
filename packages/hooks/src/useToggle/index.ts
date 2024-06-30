@@ -13,11 +13,10 @@ function useToggle<T>(defaultValue: T): [T, Actions<T>];
 
 function useToggle<T, U>(defaultValue: T, reverseValue: U): [T | U, Actions<T | U>];
 
-function useToggle<D, R>(defaultValue: D = false as unknown as D, reverseValue?: R) {
+function useToggle<D, R>(defaultValue: D = (false as unknown) as D, reverseValue?: R) {
   const [state, setState] = useState<D | R>(defaultValue);
 
   const actions = useMemo(() => {
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
     const reverseValueOrigin = (reverseValue === undefined ? !defaultValue : reverseValue) as D | R;
 
     const toggle = () => setState((s) => (s === defaultValue ? reverseValueOrigin : defaultValue));

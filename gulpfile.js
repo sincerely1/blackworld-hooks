@@ -21,7 +21,7 @@ gulp.task('cjs', function () {
 });
 
 gulp.task('es', function () {
-  const tsProject = ts.createProject('tsconfig.json', {
+  const tsProject = ts.createProject('tsconfig.pro.json', {
     module: 'ESNext',
   });
   return tsProject.src().pipe(tsProject()).pipe(babel()).pipe(gulp.dest('es/'));

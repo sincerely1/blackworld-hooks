@@ -4,7 +4,7 @@
  */
 
 import React, { useState } from 'react';
-import { usePrevious } from 'blackworldHooks';
+import { usePrevious } from 'blackworld-hooks';
 
 interface Person {
   name: string;

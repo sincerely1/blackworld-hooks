@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSet } from 'blackworldHooks';
+import { useSet } from 'blackworld-hooks';
 
 export default () => {
   const [set, { add, remove, reset }] = useSet(['Hello']);

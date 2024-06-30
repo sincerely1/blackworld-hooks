@@ -4,6 +4,7 @@ import useUpdateEffect from '../useUpdateEffect';
 import { isFunction, isUndef } from '../utils';
 
 export type SetState<S> = S | ((prevState?: S) => S);
+
 export interface Options<T> {
   defaultValue?: T | (() => T);
   serializer?: (value: T) => string;
@@ -16,14 +17,17 @@ export function createUseStorageState(getStorage: () => Storage | undefined) {
     let storage: Storage | undefined;
     const {
       onError = (e) => {
-        console.log(e);
+        console.error(e);
       },
     } = options;
+
+    // https://github.com/alibaba/hooks/issues/800
     try {
       storage = getStorage();
     } catch (err) {
       onError(err);
     }
+
     const serializer = (value: T) => {
       if (options.serializer) {
         return options.serializer(value);
@@ -37,6 +41,7 @@ export function createUseStorageState(getStorage: () => Storage | undefined) {
       }
       return JSON.parse(value);
     };
+
     function getStoredValue() {
       try {
         const raw = storage?.getItem(key);
@@ -51,10 +56,13 @@ export function createUseStorageState(getStorage: () => Storage | undefined) {
       }
       return options.defaultValue;
     }
+
     const [state, setState] = useState(getStoredValue);
+
     useUpdateEffect(() => {
       setState(getStoredValue());
     }, [key]);
+
     const updateState = (value?: SetState<T>) => {
       const currentState = isFunction(value) ? value(state) : value;
       setState(currentState);

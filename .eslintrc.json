@@ -11,6 +11,9 @@
   "plugins": ["@typescript-eslint"],
   "rules": {
     "no-undef": "off",
-    "@typescript-eslint/ban-ts-comment": "off"
+    "@typescript-eslint/ban-ts-comment": "off",
+    "no-empty-function": "off",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-var-requires": "off"
   }
 }

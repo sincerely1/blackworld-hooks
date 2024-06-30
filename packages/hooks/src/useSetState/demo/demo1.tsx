@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { useSetState } from 'blackworldHooks';
+import { useSetState } from 'blackworld-hooks';
 
 interface State {
   hello: string;

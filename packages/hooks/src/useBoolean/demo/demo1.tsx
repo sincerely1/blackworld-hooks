@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { useBoolean } from 'blackworldHooks';
+import { useBoolean } from 'blackworld-hooks';
 
 export default () => {
   const [state, { toggle, setTrue, setFalse }] = useBoolean(true);

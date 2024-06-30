@@ -4,6 +4,7 @@ import useMemoizedFn from '../useMemoizedFn';
 function useMap<K, T>(initialValue?: Iterable<readonly [K, T]>) {
   const getInitValue = () => new Map(initialValue);
   const [map, setMap] = useState<Map<K, T>>(getInitValue);
+
   const set = (key: K, entry: T) => {
     setMap((prev) => {
       const temp = new Map(prev);
@@ -11,7 +12,8 @@ function useMap<K, T>(initialValue?: Iterable<readonly [K, T]>) {
       return temp;
     });
   };
-  const setAll = (newMap: Iterable<[K, T]>) => {
+
+  const setAll = (newMap: Iterable<readonly [K, T]>) => {
     setMap(new Map(newMap));
   };
 
@@ -22,8 +24,11 @@ function useMap<K, T>(initialValue?: Iterable<readonly [K, T]>) {
       return temp;
     });
   };
+
   const reset = () => setMap(getInitValue());
+
   const get = (key: K) => map.get(key);
+
   return [
     map,
     {
@@ -35,4 +40,5 @@ function useMap<K, T>(initialValue?: Iterable<readonly [K, T]>) {
     },
   ] as const;
 }
+
 export default useMap;

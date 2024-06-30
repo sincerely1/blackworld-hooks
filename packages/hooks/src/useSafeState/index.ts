@@ -1,21 +1,21 @@
 import { useCallback, useState } from 'react';
-import { isFunction } from '../utils';
+import type { Dispatch, SetStateAction } from 'react';
+import useUnmountedRef from '../useUnmountedRef';
 
-export type SetState<S extends Record<string, any>> = <K extends keyof S>(
-  state: Pick<S, K> | null | ((prevState: Readonly<S>) => Pick<S, K> | S | null),
-) => void;
+function useSafeState<S>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<S>>];
 
-const useSetState = <S extends Record<string, any>>(
-  initialState: S | (() => S),
-): [S, SetState<S>] => {
-  const [state, setState] = useState<S>(initialState);
+function useSafeState<S = undefined>(): [S | undefined, Dispatch<SetStateAction<S | undefined>>];
 
-  const setMergeState = useCallback((patch) => {
-    setState((prevState) => {
-      const newState = isFunction(patch) ? patch(prevState) : patch;
-      return newState ? { ...prevState, ...newState } : prevState;
-    });
+function useSafeState<S>(initialState?: S | (() => S)) {
+  const unmountedRef = useUnmountedRef();
+  const [state, setState] = useState(initialState);
+  const setCurrentState = useCallback((currentState) => {
+    /** if component is unmounted, stop update */
+    if (unmountedRef.current) return;
+    setState(currentState);
   }, []);
-  return [state, setMergeState];
-};
-export default useSetState;
+
+  return [state, setCurrentState] as const;
+}
+
+export default useSafeState;

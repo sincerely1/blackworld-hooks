@@ -4,6 +4,7 @@ import useMemoizedFn from '../useMemoizedFn';
 import { isFunction, isString } from '../utils';
 
 export type State = string | undefined;
+
 export interface Options extends Cookies.CookieAttributes {
   defaultValue?: State | (() => State);
 }
@@ -17,6 +18,7 @@ function useCookieState(cookieKey: string, options: Options = {}) {
     if (isFunction(options.defaultValue)) {
       return options.defaultValue();
     }
+
     return options.defaultValue;
   });
 
@@ -37,6 +39,7 @@ function useCookieState(cookieKey: string, options: Options = {}) {
       }
     },
   );
+
   return [state, updateState] as const;
 }
 

@@ -1,4 +1,4 @@
-import { useSafeState } from 'blackworldHooks';
+import { useSafeState } from 'blackworld-hooks';
 import React, { useEffect, useState } from 'react';
 
 const Child = () => {

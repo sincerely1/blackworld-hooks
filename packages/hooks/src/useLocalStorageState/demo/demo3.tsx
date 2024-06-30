@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { useLocalStorageState } from 'blackworldHooks';
+import { useLocalStorageState } from 'blackworld-hooks';
 
 export default function () {
   const [message, setMessage] = useLocalStorageState<string | undefined>(

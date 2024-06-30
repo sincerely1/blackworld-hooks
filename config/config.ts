@@ -25,6 +25,7 @@ export default {
   hash: true,
   alias: {
     blackworldHooks: process.cwd() + '/packages/hooks/src/index.ts',
+    ['blackworld-hooks']: process.cwd() + '/packages/hooks/src/index.ts',
   },
   resolve: {
     includes: ['docs', 'packages/hooks/src'],
