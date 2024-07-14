@@ -46,6 +46,7 @@
     "@types/js-cookie": "^3.0.6",
     "@types/lodash-es": "^4.17.7",
     "antd": "^5.2.1",
+    "lodash": "^4.17.21",
     "jest-websocket-mock": "^2.1.0",
     "mockjs": "^1.1.0",
     "react-drag-listview": "^0.1.6",
