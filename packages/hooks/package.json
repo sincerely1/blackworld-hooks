@@ -16,6 +16,8 @@
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
+  "repository": "https://github.com/sincerely1/blackworld-hooks",
+  "homepage": "https://github.com/sincerely1/blackworld-hooks",
   "scripts": {
     "build": "gulp && webpack-cli"
   },
