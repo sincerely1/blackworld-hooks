@@ -10,7 +10,7 @@
     "clean-dist": "rimraf 'packages/hooks/{lib,es,node_modules,dist}'",
     "clean": "pnpm run clean-dist && rimraf node_modules",
     "dev": "set NODE_OPTIONS=--openssl-legacy-provider && dumi dev",
-    "build": "SET NODE_OPTIONS=--openssl-legacy-provider&& pnpm -r --filter=./packages/* run build",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider&& pnpm -r --filter=./packages/* run build",
     "build:doc": "set NODE_OPTIONS=--openssl-legacy-provider && dumi build",
     "test": "jest",
     "coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
